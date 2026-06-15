@@ -34,7 +34,6 @@ const user_name = computed(() => SillyTavern.getContext().name2 ?? '主角');
   background: var(--c-card-alt);
   border-bottom: 1px solid var(--c-border);
 }
-
 .section-header {
   font-size: 12px;
   font-weight: 600;
@@ -43,40 +42,33 @@ const user_name = computed(() => SillyTavern.getContext().name2 ?? '主角');
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
-
 .protag-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6px 12px;
 }
-
 .protag-item {
   display: flex;
   align-items: baseline;
   gap: 8px;
 }
-
 .protag-item.wide {
   grid-column: 1 / -1;
 }
-
 .protag-label {
   font-size: 11px;
   color: var(--c-text-dim);
   min-width: 32px;
   flex-shrink: 0;
 }
-
 .protag-value {
   font-size: 12px;
   color: var(--c-text-bright);
 }
-
 .protag-value.gold {
   color: var(--c-primary);
   font-weight: 600;
 }
-
 .protag-value.detail {
   font-size: 11px;
   color: var(--c-text-dim);

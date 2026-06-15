@@ -5,7 +5,6 @@
       :key="tab.id"
       class="tab-button"
       :class="{ active: model === tab.id }"
-      :aria-expanded="model === tab.id"
       @click="toggleTab(tab.id)"
     >
       {{ tab.label }}
@@ -14,12 +13,8 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
-  tabs: { id: string; label: string }[];
-}>();
-
+const props = defineProps<{ tabs: { id: string; label: string }[] }>();
 const model = defineModel<string | null>({ required: true });
-
 function toggleTab(id: string) {
   model.value = model.value === id ? null : id;
 }
@@ -31,7 +26,6 @@ function toggleTab(id: string) {
   background: var(--c-surface);
   border-bottom: 1px solid var(--c-border);
 }
-
 .tab-button {
   flex: 1;
   padding: 8px 12px;
@@ -45,12 +39,10 @@ function toggleTab(id: string) {
   transition: all 0.2s;
   border-bottom: 2px solid transparent;
 }
-
 .tab-button:hover {
   color: var(--c-text);
   background: rgba(212, 160, 80, 0.06);
 }
-
 .tab-button.active {
   color: var(--c-primary);
   border-bottom-color: var(--c-primary);

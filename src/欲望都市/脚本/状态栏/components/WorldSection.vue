@@ -29,7 +29,6 @@ const store = useDataStore();
   background: var(--c-card);
   border-bottom: 1px solid var(--c-border);
 }
-
 .section-header {
   font-size: 12px;
   font-weight: 600;
@@ -38,30 +37,25 @@ const store = useDataStore();
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
-
 .world-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6px 12px;
 }
-
 .world-item {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-
 .world-item.wide {
   grid-column: 1 / -1;
 }
-
 .world-label {
   font-size: 11px;
   color: var(--c-text-dim);
   min-width: 32px;
   flex-shrink: 0;
 }
-
 .world-value {
   font-size: 12px;
   color: var(--c-text-bright);
