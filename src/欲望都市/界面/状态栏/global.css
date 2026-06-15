@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --c-primary: #d4a050;
+  --c-primary-dim: #a07830;
+  --c-surface: #16162a;
+  --c-card: #1e1e36;
+  --c-card-alt: #222240;
+  --c-text: #c8c8d8;
+  --c-text-dim: #8a8aa0;
+  --c-text-bright: #e8e8f0;
+  --c-border: #2a2a50;
+  --c-danger: #e07060;
+  --c-success: #6aca8e;
+  --c-warning: #d4a050;
+  --c-bar-bg: #2a2a44;
+  --c-bar-high: #d4a050;
+  --c-bar-mid: #8aacd0;
+  --c-bar-low: #6aca8e;
+  --c-stat-number: #e0c080;
+  --font-display: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
