@@ -1,14 +1,8 @@
 import { defineMvuDataStore } from '@util/mvu';
 import { Schema } from '../../schema';
 
-function getMid(): number {
-  // 1) parent script injected __MVU_MID__ before doc.write
-  const w = window as any;
-  if (typeof w.__MVU_MID__ === 'number') return w.__MVU_MID__;
-  // 2) native frontend context
-  try { return getCurrentMessageId(); } catch (_) {}
-  // 3) fallback
-  return -1;
-}
-
-export const useDataStore = defineMvuDataStore(Schema, { type: 'message', message_id: getMid() });
+// Use 'latest' — defineMvuDataStore converts it to message_id: -1,
+// which reads the most recent message that has MVU stat_data.
+// This is the most reliable approach when loaded via $('body').load(),
+// where getCurrentMessageId() may not return a meaningful value.
+export const useDataStore = defineMvuDataStore(Schema, { type: 'message', message_id: 'latest' });

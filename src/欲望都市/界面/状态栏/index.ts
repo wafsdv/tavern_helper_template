@@ -4,6 +4,7 @@ import './global.css';
 
 $(async () => {
   await waitGlobalInitialized('Mvu');
-  await waitUntil(() => _.has(getVariables({ type: 'message' }), 'stat_data'));
+  // Wait until latest message has stat_data (MVU may parse asynchronously)
+  await waitUntil(() => _.has(getVariables({ type: 'message', message_id: -1 }), 'stat_data'), { timeout: 30000, intervalBetweenAttempts: 500 });
   createApp(App).use(createPinia()).mount('#app');
 });
